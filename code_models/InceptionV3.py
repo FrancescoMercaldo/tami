@@ -34,10 +34,7 @@ class Inception:
         else:
             inputs = Input(shape=(self.input_width_height, self.input_width_height, self.channels))
             if self.name == "Inception" or self.name == "InceptionV3":
-                #base_model = InceptionV3(weights='imagenet', include_top=False, input_tensor=inputs)
-                input_tensor = Input(shape=(299, 299, 3))
-                base_model = InceptionV3(input_tensor=input_tensor, weights='imagenet', include_top=True)
-                #base_model = InceptionV3(weights='imagenet', include_top=False, input_shape=(self.input_width_height, self.input_width_height, self.channels))
+                base_model = InceptionV3(input_tensor=inputs, weights='imagenet', include_top=True)
             else:
                 print("Invalid name, accepted 'Inception', exiting...")
                 exit()
