@@ -31,7 +31,7 @@ class VGG16_19:
                 if self.name == "VGG" or self.name == "VGG16":
                     base_model = vgg16.VGG16(weights=self.weights, include_top=True, classes=self.num_classes)
                 else:
-                    print("Invalid name, accepted 'VGG1619', exiting...")
+                    print("Invalid name, accepted 'VGG16', exiting...")
                     exit()
                 output = base_model.output
         else:
